@@ -28,4 +28,11 @@ def splitFile(fd,block_size):
         
     return new_block
 
-        
+
+def loadBalancer(config_file):
+    """Loads cf and determines which IP address has best ping.
+    """ 
+    best_ip =  []
+    
+
+    return best_ip

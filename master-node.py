@@ -12,15 +12,27 @@ class MasterNode(master_pb2.BetaMasterNodeServicer):
         """Stores a file on the data node
         """
         
-        print("storing file")
+        reply_msg = "Error has occured, file has not been written"
+     
         
         return master_pb2.StoreReply(reply_msg=request.file_name)
 
     def Read(self,request,context):
         """Reads a file from data node
         """
-
+       
+        filename =  request.file_name
+        block_size = request.block_size 
+       
+        #if the block_size flag has not been set, set it to the default
+        #1mb
+        if block_size == 0:
+            block_size = commonlib.MB 
+        
+        fd = commonlib.splitFile(filename,block_size)
+        
         print("reading file ")
+        return master_pb2.ReadReply(reply_file=fd[0])
 
 
 def main():
