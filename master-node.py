@@ -13,6 +13,9 @@ class MasterNode(master_pb2.BetaMasterNodeServicer):
         """
         
         print("storing file")
+        
+        return master_pb2.StoreReply(reply_msg=request.file_name)
+
     def Read(self,request,context):
         """Reads a file from data node
         """
