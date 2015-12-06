@@ -11,7 +11,7 @@ class MasterNode(master_pb2.BetaMasterNodeServicer):
     def Store(self,request,context):
         print("storing file")
     def Read(self,request,context):
-        print("reading file")
+        print("reading file ")
 
 
 def main():
