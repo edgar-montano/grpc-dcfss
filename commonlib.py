@@ -1,5 +1,10 @@
 import os
+from grpc.beta import implementations
 
+#global definitions used throughout program
+MB = 1<<20
+TIMEOUT = 10 
+DEBUG = True
 
 
 def splitFile(fd,block_size):

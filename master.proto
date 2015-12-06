@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+service MasterNode{
+    rpc Store(StoreRequest) returns (StoreReply){}
+    rpc Read(ReadRequest) returns (ReadReply){}    
+}
+
+message StoreRequest{
+    string file_name = 1;    
+}
+
+message StoreReply{
+    string reply_msg = 1;    
+}
+
+message ReadRequest{
+    string file_name = 1;
+    int32 block_size = 2;    
+}
+
+message ReadReply{
+    bytes reply_file = 1;    
+}
