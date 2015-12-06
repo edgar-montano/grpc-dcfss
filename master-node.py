@@ -9,8 +9,14 @@ from grpc.beta import implementations
 
 class MasterNode(master_pb2.BetaMasterNodeServicer):
     def Store(self,request,context):
+        """Stores a file on the data node
+        """
+        
         print("storing file")
     def Read(self,request,context):
+        """Reads a file from data node
+        """
+
         print("reading file ")
 
 
