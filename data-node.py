@@ -4,7 +4,7 @@
 
 import time
 import commonlib
-import master_pb2
+import data_pb2
 from grpc.beta import implementations
 
 class MasterNode(master_pb2.BetaMasterNodeServicer):
