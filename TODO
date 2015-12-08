@@ -1,3 +1,7 @@
 
 1. Modify Master-Node to handle user name and file name
 2. Modify Data-Node to store/retrieve file. 
+    Insure thta valid user can write to file.
+3. Write Error code function to handle reply_msg.
+    for example, reply_msg="404" if user file cannot be found on Read
+        request
